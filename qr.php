@@ -6,9 +6,6 @@ if ( ! is_user_logged_in() ) {
 require __DIR__ . '/inc/QR-CODE/vendor/autoload.php';
 
 use Endroid\QrCode\QrCode;
-use Endroid\QrCode\ErrorCorrectionLevel;
-use Endroid\QrCode\LabelAlignment;
-use Endroid\QrCode\Response\QrCodeResponse;
 
 $qrCode = new QrCode(
 	json_encode(
@@ -23,16 +20,6 @@ $qrCode = new QrCode(
 		]
 	)
 );
-
-$qrCode->setWriterByName('png');
-$qrCode->setMargin(10);
-$qrCode->setEncoding('UTF-8');
-$qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
-$qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0, 'a' => 0]);
-$qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 1]);
-$qrCode->setLogoSize(150, 200);
-$qrCode->setRoundBlockSize(true);
-$qrCode->setValidateResult(false);
 
 header( 'Content-Type: ' . $qrCode->getContentType() );
 echo $qrCode->writeString();
