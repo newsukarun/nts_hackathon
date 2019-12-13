@@ -19,6 +19,7 @@
 	</style>
 </head>
 <body>
+<div class="container verticalContainer">
 <?php
 if ( ! is_user_logged_in() ) {
 	echo do_shortcode( '[wp_login_form]' );
@@ -26,7 +27,6 @@ if ( ! is_user_logged_in() ) {
 	return;
 }
 ?>
-<div class="container verticalContainer">
 	<h2>Welcome Anonymous</h2><br><br>
 	<p>To generate food coupon please enter employee id and click Submit button</p><br>
 	<form class="" action="/">
