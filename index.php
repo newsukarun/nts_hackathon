@@ -27,7 +27,7 @@ if ( ! is_user_logged_in() ) {
 	return;
 }
 ?>
-	<h2>Welcome Anonymous</h2><br><br>
+	<h2>Welcome <?php echo ( is_user_logged_in() )? get_userdata( get_current_user_id() )->display_name  : 'To Nts'?>></h2><br><br>
 	<p>To generate food coupon please enter employee id and click Submit button</p><br>
 	<form class="" action="/">
 		<div class="form-group">
