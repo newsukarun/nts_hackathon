@@ -1,5 +1,6 @@
 {
     "require": {
-        "endroid/qr-code": "^3.7"
+        "endroid/qr-code": "^3.7",
+        "khanamiryan/qrcode-detector-decoder": "^1.0"
     }
 }
