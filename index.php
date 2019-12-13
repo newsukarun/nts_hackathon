@@ -3,7 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo get_bloginfo( 'title' ); ?></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<?php wp_head(); ?>
+	<style>
+		.verticalContainer {
+			margin-left: 250px;
+			margin-top: 180px;
+		}
+		.submitBtn {
+			margin-left: 90px;
+		}
+	</style>
 </head>
 <body>
 <?php
@@ -13,10 +26,17 @@ if ( ! is_user_logged_in() ) {
 	return;
 }
 ?>
-<form method="post">
-	<input type="number" name="employee_id" />
-	<input type="submit" name="submit" value="Submit" />
-</form>
+<div class="container verticalContainer">
+	<h2>Welcome Anonymous</h2><br><br>
+	<p>To generate food coupon please enter employee id and click Submit button</p><br>
+	<form class="" action="/">
+		<div class="form-group">
+			<label for="email">Employee Id:</label>
+			<input type="email" class="" id="email" placeholder="Enter employee id" name="email">
+		</div>
+		<button type="submit" class="btn btn-primary submitBtn">Submit</button>
+	</form>
+</div>
 </body>
 <?php wp_footer(); ?>
 </html>
