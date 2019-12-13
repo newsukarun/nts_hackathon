@@ -37,7 +37,7 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 	}
 
 	public function get_latest_post( WP_REST_Request $request ) {
-		return new WP_REST_Response( $request, 200 );
+		return new WP_REST_Response( get_option( 'sms_v1_verify' ), 200 );
 	}
 
 	public function add_post_to_category_permission() {
@@ -45,7 +45,9 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 	}
 
 	public function add_post_to_category( WP_REST_Request $request ) {
-		return new WP_REST_Response( [ 'message' => 'Created' ], 200 );;
+		add_option( 'sms_v1_verify', $request );
+
+		return new WP_REST_Response( [ 'message' => 'Created' ], 200 );
 	}
 }
 
