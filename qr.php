@@ -1,8 +1,3 @@
-<style type="text/css">
-	body{
-		background: white !important;
-	}
-</style>
 <?php
 /* Template Name: QR Code */
 if ( ! is_user_logged_in() ) {
