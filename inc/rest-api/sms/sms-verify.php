@@ -11,13 +11,13 @@ class Nts_Sms_Verify extends WP_REST_Controller{
 			$this->endpoint,
 			[
 				'methods'             => 'GET',
-				'callback'            => [ $this, 'process_verify' ],
+				'callback'            => [ $this, 'get_items' ],
 				'permission_callback' => [ $this, 'get_items_permissions_check' ],
 			]
 		);
 	}
 
-	public function process_verify( WP_REST_Request $request ) {
+	public function get_items( $request ) {
 		return new WP_REST_Response( $request, 200 );
 	}
 
