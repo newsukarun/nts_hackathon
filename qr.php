@@ -10,9 +10,8 @@ use Endroid\QrCode\QrCode;
 $qrCode = new QrCode(
 	json_encode(
 		[
-			'user_info'    => [
-				wp_get_current_user(),
-			],
+			'user_name'    => wp_get_current_user()->display_name,
+			'user_is'    => get_current_user_id(),
 			'date'         => current_datetime(),
 			'employee_id'  => get_field( 'employee_id', get_current_user_id() ),
 			'user_package' => get_field( 'meal_courses', get_current_user_id() ),
