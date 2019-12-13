@@ -9,13 +9,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<?php wp_head(); ?>
 	<style>
-		.verticalContainer {
-			margin-left: 250px;
-			margin-top: 180px;
-		}
-
-		.submitBtn {
-			margin-left: 90px;
+		.container {
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	</style>
 </head>
