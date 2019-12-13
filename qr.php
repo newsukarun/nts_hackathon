@@ -7,6 +7,6 @@ require __DIR__ . '/inc/QR-CODE/vendor/autoload.php';
 
 use Endroid\QrCode\QrCode;
 
-$qrCode = new QrCode( 'Life is too short to be generating QR codes' );
+$qrCode = new QrCode( json_encode( ['user_name' => 'Arun'] ) );
 header( 'Content-Type: ' . $qrCode->getContentType() );
 echo $qrCode->writeString();
