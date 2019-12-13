@@ -44,5 +44,3 @@ echo $qrCode->writeString();
 $qrCode->writeFile( __DIR__ . '/inc/QR-CODE/img/QR/' . get_current_user_id() . '_logo.png' );
 // Create a response object
 $response = new QrCodeResponse( $qrCode );
-header( 'Content-Type: ' . $qrCode->getContentType() );
-echo $qrCode->writeString();
