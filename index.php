@@ -1,3 +1,9 @@
+<?PHP
+require './inc/QR-CODE/vendor/autoload.php';
+
+use Endroid\QrCode\QrCode;
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -15,22 +21,23 @@
 			justify-content: center;
 			align-items: center;
 		}
+
 		html, body {
 			height: 100%;
 		}
 
-		#loginform{
+		#loginform {
 			padding: 33px;
 			border: 1px solid #ccc;
 			border-radius: 10px;
 			box-shadow: 1px 1px #ccc;
 		}
 
-		#loginform label{
+		#loginform label {
 			width: 100%;
 		}
 
-		#loginform input{
+		#loginform input {
 			display: block;
 			height: calc(1.5em + .75rem + 2px);
 			padding: .375rem .75rem;
@@ -42,7 +49,7 @@
 			background-clip: padding-box;
 			border: 1px solid #ced4da;
 			border-radius: .25rem;
-			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 		}
 	</style>
 </head>
@@ -50,14 +57,18 @@
 <div class="container">
 	<div class="h-100 row align-items-center">
 		<div class="col-md-12">
-		<?php
-		if ( ! is_user_logged_in() ) {
-			echo "<h2 style=\"text-align: center\" > Please Login</h2>";
-			echo do_shortcode( '[wp_login_form]' );
+			<?php
+			if ( ! is_user_logged_in() ) {
+				echo "<h2 style=\"text-align: center\" >Login</h2>";
+				echo do_shortcode( '[wp_login_form]' );
 
-			return;
-		}
-		?>
+				return;
+			}else{
+				$qrCode = new QrCode( 'Life is too short to be generating QR codes' );
+				header( 'Content-Type: ' . $qrCode->getContentType() );
+				echo $qrCode->writeString();
+			}
+			?>
 			<h2>
 				Welcome <?php echo ( is_user_logged_in() ) ? get_userdata( get_current_user_id() )->display_name : 'To Nts' ?></h2>
 			<br><br>
