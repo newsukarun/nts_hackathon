@@ -1,5 +1,5 @@
 <?PHP
-require './inc/QR-CODE/vendor/autoload.php';
+require __DIR__ . '/inc/QR-CODE/vendor/autoload.php';
 
 use Endroid\QrCode\QrCode;
 
