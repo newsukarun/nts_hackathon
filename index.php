@@ -15,6 +15,9 @@
 			justify-content: center;
 			align-items: center;
 		}
+		html, body {
+			height: 100%;
+		}
 	</style>
 </head>
 <body>
