@@ -49,7 +49,7 @@
 <body>
 <div class="container">
 	<div class="h-100 row align-items-center">
-		<div class="col-md-12">
+		<div class="col-md-12" style="text-align: center">
 		<?php
 		if ( ! is_user_logged_in() ) {
 			echo "<h2> Please Login</h2>";
