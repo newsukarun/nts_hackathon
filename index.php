@@ -13,30 +13,39 @@
 			margin-left: 250px;
 			margin-top: 180px;
 		}
+
 		.submitBtn {
 			margin-left: 90px;
 		}
 	</style>
 </head>
 <body>
-<div class="container verticalContainer">
-<?php
-if ( ! is_user_logged_in() ) {
-	echo do_shortcode( '[wp_login_form]' );
+<div class="container">
+	<div class="row">
+		<?php
+		if ( ! is_user_logged_in() ) {
+			echo do_shortcode( '[wp_login_form]' );
 
-	return;
-}
-?>
-	<h2>Welcome <?php echo ( is_user_logged_in() )? get_userdata( get_current_user_id() )->display_name  : 'To Nts'?></h2><br><br>
-	<p>To generate food coupon please enter employee id and click Submit button</p><br>
-	<form class="" action="/">
-		<div class="form-group">
-			<label for="email">Employee Id:</label>
-			<input type="email" class="form-control" id="email" placeholder="Enter employee id / Email Id" name="email">
+			return;
+		}
+		?>
+		<div class="col-md-12">
+			<h2>
+				Welcome <?php echo ( is_user_logged_in() ) ? get_userdata( get_current_user_id() )->display_name : 'To Nts' ?></h2>
+			<br><br>
+			<p>To generate food coupon please enter employee id and click Submit button</p><br>
+			<form class="" action="/">
+				<div class="form-group">
+					<label for="email">Employee Id:</label>
+					<input
+						type="email" class="form-control" id="email" placeholder="Enter employee id / Email Id"
+						name="email">
+				</div>
+				<button type="submit" class="btn btn-primary submitBtn">Submit</button>
+				<button type="button" class="btn btn-primary submitBtn">Generate QR Code</button>
+			</form>
 		</div>
-		<button type="submit" class="btn btn-primary submitBtn">Submit</button>
-		<button type="button" class="btn btn-primary submitBtn">Generate QR Code</button>
-	</form>
+	</div>
 </div>
 </body>
 <?php wp_footer(); ?>
