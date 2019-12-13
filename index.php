@@ -32,9 +32,10 @@ if ( ! is_user_logged_in() ) {
 	<form class="" action="/">
 		<div class="form-group">
 			<label for="email">Employee Id:</label>
-			<input type="email" class="" id="email" placeholder="Enter employee id" name="email">
+			<input type="email" class="" id="email" placeholder="Enter employee id / Email Id" name="email">
 		</div>
 		<button type="submit" class="btn btn-primary submitBtn">Submit</button>
+		<button type="button" class="btn btn-primary submitBtn">Generate QR Code</button>
 	</form>
 </div>
 </body>
