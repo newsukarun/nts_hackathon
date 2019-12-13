@@ -13,6 +13,10 @@ if ( ! is_user_logged_in() ) {
 	return;
 }
 ?>
+<form method="post">
+	<input type="number" name="employee_id" />
+	<input type="submit" name="submit" value="Submit" />
+</form>
 </body>
 <?php wp_footer(); ?>
 </html>
