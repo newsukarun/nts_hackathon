@@ -1,9 +1,3 @@
-<?PHP
-require __DIR__ . '/inc/QR-CODE/vendor/autoload.php';
-
-use Endroid\QrCode\QrCode;
-
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -63,10 +57,6 @@ use Endroid\QrCode\QrCode;
 				echo do_shortcode( '[wp_login_form]' );
 
 				return;
-			}else{
-				$qrCode = new QrCode( 'Life is too short to be generating QR codes' );
-				header( 'Content-Type: ' . $qrCode->getContentType() );
-				echo $qrCode->writeString();
 			}
 			?>
 			<h2>
