@@ -11,11 +11,12 @@ $qrCode = new QrCode(
 	json_encode(
 		[
 			'user_name'    => wp_get_current_user()->display_name,
-			'user_is'    => get_current_user_id(),
+			'user_email'   => wp_get_current_user()->user_email,
+			'user_is'      => get_current_user_id(),
 			'date'         => current_datetime(),
-			'employee_id'  => get_field( 'employee_id', get_current_user_id() ),
-			'user_package' => get_field( 'meal_courses', get_current_user_id() ),
-			'user_package' => get_field( 'phone_number', get_current_user_id() ),
+			'employee_id'  => get_field( 'employee_id', 'user_' . get_current_user_id() ),
+			'user_package' => get_field( 'meal_courses', 'user_' . get_current_user_id() ),
+			'user_package' => get_field( 'phone_number', 'user_' . get_current_user_id() ),
 		]
 	)
 );
