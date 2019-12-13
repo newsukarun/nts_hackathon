@@ -23,6 +23,7 @@
 <body>
 <div class="container">
 	<div class="h-100 row align-items-center">
+		<div class="col-md-12">
 		<?php
 		if ( ! is_user_logged_in() ) {
 			echo do_shortcode( '[wp_login_form]' );
@@ -30,7 +31,6 @@
 			return;
 		}
 		?>
-		<div class="col-md-12">
 			<h2>
 				Welcome <?php echo ( is_user_logged_in() ) ? get_userdata( get_current_user_id() )->display_name : 'To Nts' ?></h2>
 			<br><br>
