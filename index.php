@@ -54,7 +54,7 @@
 			<?php
 			if ( ! is_user_logged_in() ) {
 				echo "<h2 style=\"text-align: center\" >Login</h2>";
-				echo do_shortcode( '[wp_login_form]' );
+				echo do_shortcode( '[wp_login_form redirect="http://nts.wp-vip.com/qr/" ]' );
 
 				return;
 			}
