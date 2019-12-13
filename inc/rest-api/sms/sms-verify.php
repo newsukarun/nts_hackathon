@@ -1,6 +1,6 @@
 <?php
 
-class Nts_Sms_Verify{
+class Nts_Sms_Verify extends WP_REST_Controller{
 
 	public $name_space = 'sms/v1/';
 	public $endpoint = 'verify';
