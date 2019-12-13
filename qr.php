@@ -20,5 +20,7 @@ $qrCode = new QrCode(
 		]
 	)
 );
+$qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255, 'a' => 1]);
+
 header( 'Content-Type: ' . $qrCode->getContentType() );
 echo $qrCode->writeString();
