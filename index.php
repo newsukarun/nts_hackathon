@@ -49,10 +49,10 @@
 <body>
 <div class="container">
 	<div class="h-100 row align-items-center">
-		<div class="col-md-12" style="text-align: center">
+		<div class="col-md-12">
 		<?php
 		if ( ! is_user_logged_in() ) {
-			echo "<h2> Please Login</h2>";
+			echo "<h2 style=\"text-align: center\" > Please Login</h2>";
 			echo do_shortcode( '[wp_login_form]' );
 
 			return;
