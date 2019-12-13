@@ -8,7 +8,7 @@ use Endroid\QrCode\LabelAlignment;
 use Endroid\QrCode\Response\QrCodeResponse;
 
 if ( ! is_user_logged_in() ) {
-	wp_redirect( home_url() );
+	wp_redirect('http://nts.wp-vip.com/');
 	exit();
 } else {
 	$json = json_encode(
