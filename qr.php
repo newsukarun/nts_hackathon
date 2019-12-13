@@ -26,11 +26,10 @@ $qrCode = new QrCode( $json );
 $qrCode->setSize( 300 );
 // Set advanced options
 $qrCode->setWriterByName( 'png' );
-$qrCode->setMargin( 10 );
 $qrCode->setEncoding( 'UTF-8' );
 $qrCode->setErrorCorrectionLevel( ErrorCorrectionLevel::HIGH() );
-$qrCode->setForegroundColor( [ 'r' => 255, 'g' => 255, 'b' => 255, 'a' => 0 ] );
-$qrCode->setBackgroundColor( [ 'r' => 255, 'g' => 255, 'b' => 255, 'a' => 1 ] );
+$qrCode->setForegroundColor( [ 'r' => 0, 'g' => 0, 'b' => 0, 'a' => 0 ] );
+$qrCode->setBackgroundColor( [ 'r' => 255, 'g' => 255, 'b' => 255, 'a' => 0 ] );
 $qrCode->setLabel( 'Scan the code', 16, null, LabelAlignment::CENTER() );
 $qrCode->setLogoPath( __DIR__ . '/inc/QR-CODE/img/logo.png' );
 $qrCode->setLogoSize( 50, 50 );
