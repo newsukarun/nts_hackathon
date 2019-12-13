@@ -6,6 +6,9 @@ if ( ! is_user_logged_in() ) {
 require __DIR__ . '/inc/QR-CODE/vendor/autoload.php';
 
 use Endroid\QrCode\QrCode;
+use Endroid\QrCode\ErrorCorrectionLevel;
+use Endroid\QrCode\LabelAlignment;
+use Endroid\QrCode\Response\QrCodeResponse;
 
 $qrCode = new QrCode(
 	json_encode(
