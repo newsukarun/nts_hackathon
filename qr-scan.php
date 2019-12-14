@@ -38,16 +38,16 @@
     </head>
     <body>
         <div style="position: relative;display: inline-block;">
-            <canvas id="qr-canvas" width="320" height="240"></canvas>  // id="qr-canvas" is important!
+            <canvas id="qr-canvas" width="320" height="240"></canvas>
             <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
             <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
             <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
         </div>
     </body>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/qrcodelib.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/WebCodeCam.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/andrastoth/WebCodeCam/master/js/qrcodelib.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/andrastoth/WebCodeCam/master/js/WebCodeCam.js"></script>
     <script type="text/javascript">
     //  defalut-settings
         $('#qr-canvas').WebCodeCam({
