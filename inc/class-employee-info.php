@@ -24,6 +24,11 @@ class Employee {
 		}
 	}
 
+	function get_id() {
+
+		return $this->employee_details->ID;
+	}
+
 	function get_employee_by_id( $id ) {
 		$user = get_users(
 			[

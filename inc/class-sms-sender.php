@@ -28,11 +28,6 @@ class SMS_Sender {
 		}
 	}
 
-	function get_message_body() {
-
-		return 'Hi, This is testing SMS';
-	}
-
 	function send_sms() {
 
 		if ( ! property_exists( $this, 'employee' ) || empty( $this->employee ) ) {
@@ -40,7 +35,7 @@ class SMS_Sender {
 		}
 
 		$sms_object = [
-			'message' => $this->get_message_body(),
+			'message' => ntsfood_get_coupon_msg( $this->employee ),
 			'to' => [
 				$this->employee->get_mobile_number(),
 			]
