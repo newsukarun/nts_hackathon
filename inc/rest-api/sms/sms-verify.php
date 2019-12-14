@@ -39,7 +39,7 @@ class NTS_FOOD_Coupon extends WP_REST_Controller {
 		$keyword = filter_input( INPUT_POST, 'keyword', FILTER_SANITIZE_STRING );
 		$message = filter_input( INPUT_POST, 'message', FILTER_SANITIZE_STRING );
 
-		$sms_handler = new NTSFOOD\SMS_Sender( [ 'employee' => (int) $message ] );
+		$sms_handler = new NTSFOOD\SMS_Sender( [ 'employee' => $message ] );
 		$send_sms = $sms_handler->send_sms();
 
 		update_option( 'sms_v1_verify', [ $send_sms, $sms_handler, $keyword, $message ] );
