@@ -71,7 +71,8 @@
 						name="email">
 				</div>
 				<button type="submit" class="btn btn-primary submitBtn">Submit</button>
-				<button type="button" class="btn btn-primary submitBtn">Generate QR Code</button>
+				<a  class="button button-primary" href="<?php echo home_url('/qr'); ?>">Get QR Code</a>
+				<a class="button button-primary" href="<?php echo home_url('/qrscan'); ?>">Scan QR Code</a>
 			</form>
 		</div>
 	</div>
