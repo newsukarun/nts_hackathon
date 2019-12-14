@@ -23,8 +23,15 @@ class SMS_Sender {
 	 */
 	function __construct( $args = [] ) {
 
+		if( ! empty( $args['employee'] ) ) {
+
+			$this->employee = new \NTSFOOD\Employee( $args['employee'] );
+		}
 	}
 
-
-
+	function send_sms() {
+		if ( ! property_exists( $this, 'employee' ) ) {
+			return new \WP_Error( 'sms_failed', __( 'Cannot send SMS. Employee not found.' ) );
+		}
+	}
 }

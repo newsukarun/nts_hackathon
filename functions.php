@@ -10,3 +10,13 @@ add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
 	show_admin_bar( false );
 }
+
+if ( ! function_exists( 'nts_food_coupon_sms' ) ) {
+
+	function nts_food_coupon_sms(  ) {
+
+		$msg = '';
+
+
+	}
+}

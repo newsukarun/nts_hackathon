@@ -20,8 +20,7 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 				),
 				array(
 					'methods'             => WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'add_post_to_category' ),
-					'permission_callback' => array( $this, 'add_post_to_category_permission' ),
+					'callback'            => array( $this, 'get_food_coupon' ),
 				),
 			)
 		);
@@ -40,12 +39,10 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 		return new WP_REST_Response( get_option( 'sms_v1_verify' ), 200 );
 	}
 
-	public function add_post_to_category_permission() {
-		return $this->get_latest_post_permission();
-	}
 
-	public function add_post_to_category( WP_REST_Request $request ) {
-		update_option( 'sms_v1_verify', $request );
+	public function get_food_coupon( WP_REST_Request $request ) {
+
+		update_option( 'sms_v1_verify', $_POST );
 
 		return new WP_REST_Response( [ 'message' => 'Created' ], 200 );
 	}
