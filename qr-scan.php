@@ -1,12 +1,13 @@
 <?php
 /* Template Name: QR Code Scanner */
 ?>
-<html lang="en">
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-   <script src="<?php echo get_template_directory_uri(); ?>/inc/QR-SCANNER/jquery.webcam.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/inc/QR-SCANNER/jquery.webcam.js"></script>
 </head>
 <body>
 <div id="webcam"></div>
