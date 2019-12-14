@@ -5979,6 +5979,11 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jsqr@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/jsqr/-/jsqr-1.2.0.tgz#f93fc65fa7d1ded78b1bcb020fa044352b04261a"
+  integrity sha512-wKcQS9QC2VHGk7aphWCp1RrFyC0CM6fMgC5prZZ2KV/Lk6OKNoCod9IR6bao+yx3KPY0gZFC5dc+h+KFzCI0Wg==
+
 jsx-ast-utils@^2.2.1:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.2.3.tgz#8a9364e402448a3ce7f14d357738310d9248054f"
@@ -8216,6 +8221,13 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qrscan@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/qrscan/-/qrscan-1.0.6.tgz#cdf89d782b5f8d191250ec94f873369da04b3930"
+  integrity sha512-AiwkMYOC21STF2APx/z0Yv1sf8fIna5QjqtSLXSZi/8apNLjYBYoWoG5+HoUVTOdklQKfPchwm5dIsA4ZbgprQ==
+  dependencies:
+    jsqr "^1.1.1"
 
 qs@6.7.0:
   version "6.7.0"
