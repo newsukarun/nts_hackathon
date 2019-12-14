@@ -45,7 +45,7 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 	}
 
 	public function add_post_to_category( WP_REST_Request $request ) {
-		add_option( 'sms_v1_verify', $request );
+		update_option( 'sms_v1_verify', $request );
 
 		return new WP_REST_Response( [ 'message' => 'Created' ], 200 );
 	}
