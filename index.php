@@ -63,12 +63,12 @@
                 Welcome <?php echo ( is_user_logged_in() ) ? get_userdata( get_current_user_id() )->display_name : 'To Nts' ?></h2>
             <br><br>
             <p>To generate food coupon please enter employee id and click Submit button</p><br>
-            <form class="" action="/">
+            <form class="ntsfoodcouponform" action="/">
                 <div class="form-group">
                     <label for="email">Employee Id:</label>
                     <input
-                            type="email" class="form-control" id="email" placeholder="Enter employee id / Email Id"
-                            name="email" autocomplete="off">
+                            type="text" class="form-control" id="employee_id" placeholder="Enter employee id / Email Id"
+                            name="message" autocomplete="off">
                 </div>
                 <button type="submit" class="btn btn-primary submitBtn">Submit</button>
                 <a class="button button-primary" href="<?php echo home_url( '/qr' ); ?>">Get QR Code</a>
