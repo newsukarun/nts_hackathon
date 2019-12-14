@@ -68,11 +68,12 @@
 					<label for="email">Employee Id:</label>
 					<input
 						type="email" class="form-control" id="email" placeholder="Enter employee id / Email Id"
-						name="email">
+						name="email" autocomplete="off">
 				</div>
 				<button type="submit" class="btn btn-primary submitBtn">Submit</button>
 				<a  class="button button-primary" href="<?php echo home_url('/qr'); ?>">Get QR Code</a>
 				<a class="button button-primary" href="<?php echo home_url('/qrscan'); ?>">Scan QR Code</a>
+                <?php wp_nonce_field( 'requeest_coupon', 'requeest_coupon_msg' ); ?>
 			</form>
 		</div>
 	</div>
