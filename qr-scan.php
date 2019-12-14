@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-   <script src="<?php echo get_template_directory_uri(); ?>/inc/QR-CODE/scanner/jquery.webcam.min.js"></script>
+   <script src="<?php echo get_template_directory_uri(); ?>/inc/QR-CODE/qr-scanner/jquery.webcam.min.js"></script>
 </head>
 <body>
 <div id="webcam"></div>
