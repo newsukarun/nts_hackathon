@@ -17,7 +17,7 @@ jQuery("#webcam").webcam({
 	width: 320,
 	height: 240,
 	mode: "callback",
-	swffile: "inc/QR-CODE/scanner/jscam_canvas_only.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
+	swffile: "inc/QR-SCANNER/jscam_canvas_only.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
 
 	onTick: function(remain) {
 
