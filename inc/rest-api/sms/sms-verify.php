@@ -1,13 +1,13 @@
 <?php
 
-class Nts_Sms_Verify extends WP_REST_Controller {
+class NTS_FOOD_Coupon extends WP_REST_Controller {
 
 	//The namespace and version for the REST SERVER
-	var $my_namespace = 'sms/v';
-	var $my_version = '1';
+	var $ntsfood_namespacce = 'sms/v';
+	var $ntsfood_version = '1';
 
 	public function register_routes() {
-		$namespace = $this->my_namespace . $this->my_version;
+		$namespace = $this->ntsfood_namespacce . $this->ntsfood_version;
 		$base      = 'verify';
 		register_rest_route(
 			$namespace,
@@ -19,8 +19,8 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 					'permission_callback' => array( $this, 'get_latest_post_permission' ),
 				),
 				array(
-					'methods'             => WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'get_food_coupon' ),
+					'methods'  => WP_REST_Server::CREATABLE,
+					'callback' => array( $this, 'foodcoupon_sms' ),
 				),
 			)
 		);
@@ -31,22 +31,27 @@ class Nts_Sms_Verify extends WP_REST_Controller {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 	}
 
-	public function get_latest_post_permission() {
-		return true;
-	}
-
 	public function get_latest_post( WP_REST_Request $request ) {
 		return new WP_REST_Response( get_option( 'sms_v1_verify' ), 200 );
 	}
 
+	public function foodcoupon_sms( WP_REST_Request $request ) {
+		$keyword = filter_input( INPUT_POST, 'keyword', FILTER_SANITIZE_STRING );
+		$message = filter_input( INPUT_POST, 'message', FILTER_SANITIZE_STRING );
 
-	public function get_food_coupon( WP_REST_Request $request ) {
+		$sms_handler = new NTSFOOD\SMS_Sender( [ 'employee' => (int) $message ] );
+		$send_sms = $sms_handler->send_sms();
 
-		update_option( 'sms_v1_verify', $_POST );
+		update_option( 'sms_v1_verify', [ $send_sms, $sms_handler, $keyword, $message ] );
 
-		return new WP_REST_Response( [ 'message' => 'Created' ], 200 );
+		if( is_wp_error( $send_sms ) ) {
+
+			return new WP_REST_Response( [ 'message' => $send_sms->get_error_message() ], 403 );
+		}
+
+		return new WP_REST_Response( [ 'message' => __( 'Coupon sent successfully' ) ], 200 );
 	}
 }
 
-$my_rest_server = new Nts_Sms_Verify();
+$my_rest_server = new NTS_FOOD_Coupon();
 $my_rest_server->hook_rest_server();
