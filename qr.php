@@ -41,7 +41,7 @@ if ( ! is_user_logged_in() ) {
 	header( 'Content-Type: ' . $qrCode->getContentType() );
 	echo $qrCode->writeString();
 	// Save it to a file
-	$qrCode->writeFile( __DIR__ . '/inc/QR-CODE/img/' . get_current_user_id() . '_logo.png' );
+	$qrCode->writeFile( __DIR__ . '/inc/QR-CODE/img/QR/' . get_current_user_id() . '_logo.png' );
 	// Create a response object
 	$response = new QrCodeResponse( $qrCode );
 }
