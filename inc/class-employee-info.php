@@ -20,7 +20,7 @@ class Employee {
 
 		} elseif ( filter_var( $emp_id_email, FILTER_VALIDATE_EMAIL ) ) {
 
-			$this->employee_details = get_user_by( 'ID', $user_id );
+			$this->employee_details = get_user_by( 'email', $emp_id_email );
 		}
 	}
 

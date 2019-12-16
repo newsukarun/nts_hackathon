@@ -13,7 +13,11 @@ class SMS_Sender {
 	 */
 	private $auth_token = '308248AUkV8yIaQ0E5df37e92';
 
-	//private $api_endpoint = 'http://api.msg91.com/api/sendhttp.php';
+	/**
+	 * Endpoint to send sms.
+	 *
+	 * @var string
+	 */
 	private $api_endpoint = 'https://api.msg91.com/api/v2/sendsms?country=91';
 
 	/**
